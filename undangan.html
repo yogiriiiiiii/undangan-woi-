@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Undangan Yogi & Michie</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #fff7f0, #fdeeea);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      overflow: hidden;
+    }
+
+    .card {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 500px;
+      box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 48px;
+      color: #b76e79;
+      margin-bottom: 10px;
+    }
+
+    .names {
+      font-size: 26px;
+      font-weight: bold;
+      color: #4a3f35;
+      margin-bottom: 15px;
+    }
+
+    .details {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      font-size: 14px;
+      color: #aaa;
+      margin-top: 30px;
+    }
+
+    /* Animasi kelopak bunga */
+    .petal {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: fall 10s linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Undangan Pernikahan</h1>
+    <p class="names">Yogi & Michie</p>
+    <p class="details">Dengan penuh cinta, kami mengundang Anda untuk hadir dalam pernikahan kami.</p>
+    <p class="details"><strong>Tanggal:</strong> 1 Agustus 2025</p>
+    <p class="details"><strong>Waktu:</strong> 10.00 WIB - selesai</p>
+    <p class="details"><strong>Tempat:</strong> Ballroom Sakura, Bandung</p>
+    <p class="details">Kehadiran dan doa restu Anda sangat berarti bagi kami.</p>
+    <div class="footer">© 2025 Yogi & Michie</div>
+  </div>
+
+  <script>
+    // Membuat animasi kelopak bunga jatuh
+    function createPetal() {
+      const petal = document.createElement("div");
+      petal.classList.add("petal");
+      petal.style.left = Math.random() * 100 + "vw";
+      petal.style.animationDuration = (5 + Math.random() * 5) + "s";
+      petal.style.width = petal.style.height = (10 + Math.random() * 20) + "px";
+      document.body.appendChild(petal);
+
+      setTimeout(() => {
+        petal.remove();
+      }, 10000);
+    }
+
+    setInterval(createPetal, 300);
+  </script>
+
+</body>
+</html>
